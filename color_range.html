@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        colorChanger
+    </title>
+    <style>
+        #colorBox{
+            height:200px;
+            width:200px;
+            background-color:rgb(0,0,0);
+            margin:auto;
+        }
+        #pp{
+            color:red;
+            text-align: center;
+        }
+
+        .rangeColor{
+            display:flex;
+            justify-content: space-around; 
+        }
+
+        .ranges{
+            
+            padding:20px;
+
+        }
+    </style>
+
+    <script>
+        function colorChange(){
+    let rval = document.getElementById("red").value;
+    let gval = document.getElementById("green").value;
+    let bval = document.getElementById("blue").value;
+    document.getElementById("colorBox").style.backgroundColor = `rgb(${rval}, ${gval}, ${bval})`;
+    document.getElementById("red-num").innerHTML = rval;
+    document.getElementById("blue-num").innerHTML = bval;
+    document.getElementById("green-num").innerHTML = gval;
+}
+
+    </script>
+</head>
+<body>
+    <h1 id="pp">This Box changes the color based on the range given for RGB</h1>
+    <div id="colorBox"></div>
+    <div class="rangeColor">
+        <div class="ranges">
+            <p style="float: left;margin:0;transition: value 0.5s ease;" id="red-num">0</p>
+            <input class="r" type="range" min="0" max="255" id="red" value="0" oninput="colorChange()">
+            <p style="text-align: center;">Red</p>
+        </div>
+        <div class="ranges">
+            <p style="float: left;margin:0" id="green-num">0</p>
+            <input class="r" type="range" min="0" max="255" id="green" value="0" oninput="colorChange()">
+            <p style="text-align: center;">Green</p>
+        </div>
+        <div class="ranges">
+            <p style="float: left;margin:0" id="blue-num">0</p>
+            <input class="r" type="range" min="0" max="255" id="blue" value="0" oninput="colorChange()">
+            <p style="text-align: center;">Blue</p>
+        </div>
+    </div>
+</body>
